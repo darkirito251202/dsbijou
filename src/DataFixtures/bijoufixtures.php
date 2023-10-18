@@ -24,13 +24,13 @@ class bijoufixtures extends Fixture
             $bijou->setdescription($this->faker->text());
             $bijou->setprixvente($this->faker->randomNumber());  
             $bijou->setprixlocation($this->faker->randomNumber());
-            $bijou->setidcategorie_id($this->getReference('categorie'));    
+            $bijou->setidcategorie($this->getReference('categorie'));   
             $manager->persist($bijou);
         }
         $manager->flush();
     }
     public function getDependencies()
     {
-        return [categorieFixtures::class];
+        return [categoriefixtures::class];
     }
 }
